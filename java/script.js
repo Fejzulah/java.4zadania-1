@@ -61,17 +61,21 @@ function tmp(a) {
 
 console.log("Задание 4")
 function randomaizer() {
-    const secretnoechislo = Math.floor(Math.random() * 10) + 1
+    const secretnoechislo = Math.floor(Math.random() * 10) + 1;
     
-    let chislo = Number(prompt('Задание 4: Угадай число от 1 до 10'))
+    let chislo;
 
-    if (chislo === secretnoechislo) {
-        console.log('  Вы угадали!')
-    } else if (chislo < secretnoechislo) {
-        console.log('Не угадали, число было больше!')
-    } else {
-        console.log('Не угадали. Загаданное число было меньше! ' )
+    while (chislo !== secretnoechislo) {
+        chislo = Number(prompt('Задание 4: Угадай число от 1 до 10'));
+
+        if (chislo === secretnoechislo) {
+            console.log('Вы угадали!');
+        } else if (chislo < secretnoechislo) {
+            console.log('Не угадали, загаданное число больше!');
+        } else {
+            console.log('Не угадали, загаданное число меньше!');
+        }
     }
 }
 
-randomaizer()
+randomaizer();
